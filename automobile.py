@@ -24,12 +24,12 @@ y[y=="gas"]=0
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=.20,random_state=0)
 
-
+#Linear Regression
 from sklearn.linear_model import LinearRegression
 lr=LinearRegression()
 lr.fit(X,y)
 y_pred=lr.predict(X)
-r2_score(y,y_pred)   
+r2_score(y,y_pred)          #We got 95% acuuracy. This model proves that it suits perfectly for furistic data.
 y_pred=lr.predict([[3.01,3.40,23.00,106,4800,26,27]])
 y_pred.astype(int)
 a=y_pred[0].astype(int)
@@ -38,29 +38,5 @@ if a==1:
     print("The vehicle possess diesel")
 elif a==0:
     print("The vehicle possess gas")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
